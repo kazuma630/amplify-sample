@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import { AmplifyProvider } from "@aws-amplify/ui-react";
+import { ItemCardCollection } from './ui-components';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
@@ -54,6 +56,9 @@ function App() {
           </a>
         </span>
       </header>
+      <AmplifyProvider>
+        <ItemCardCollection />
+      </AmplifyProvider>
       <Authenticator>
         {({ signOut, user }) => (
           <main>
